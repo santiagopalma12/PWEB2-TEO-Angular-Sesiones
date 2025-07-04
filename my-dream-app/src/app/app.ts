@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './data';
+import { Post } from './Post';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +13,18 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'my-dream-app';
   name: string = "Santiago Enrique";
-  age: number = 40;                 
+  age: number = 40;
+
+  posts: Post[] = []; 
+
+  constructor(private dataService: DataService) {} 
+
+  ngOnInit() {
+    this.dataService.getData().subscribe(data => {
+      this.posts = data;
+    });
+  }
 }

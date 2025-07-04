@@ -1,14 +1,7 @@
-<div>
-  <form>
-    <label>Name: </label>
-    <input type="text" name="name" [(ngModel)]="name">
-    <br>
-    <label>Age: </label>
-    <input type="number" name="age" [(ngModel)]="age">
-  </form>
-
-  <h2>Name: {{ name }}</h2>
-  <h2>Age: {{ age }}</h2>
+<div *ngFor="let post of posts">
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.body }}</p>
+  <hr>
 </div>
 
 <router-outlet></router-outlet>
