@@ -1,7 +1,11 @@
-<div *ngFor="let post of posts">
-  <h2>{{ post.title }}</h2>
-  <p>{{ post.body }}</p>
-  <hr>
-</div>
-
-<router-outlet></router-outlet>
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/hello">Hello</a></li>
+      </ul>
+    </nav>
+    <hr>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
