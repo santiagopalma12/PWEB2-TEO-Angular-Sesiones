@@ -1,0 +1,6 @@
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+.row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; }
+.row div { padding: 0 10px; }

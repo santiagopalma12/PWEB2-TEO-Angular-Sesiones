@@ -1,1 +1,12 @@
-<p>items works!</p>
+<div class="container">
+  <app-add-item-form (addItemEvent)="addItem($event)"></app-add-item-form>
+  <hr>
+  <div *ngFor="let item of items">
+    <app-item
+      [item]="item"
+      (deleteItemEvent)="deleteItem($event)"
+      (toggleItemEvent)="toggleItem($event)">
+    </app-item>
+  </div>
+  <app-total [total]="total"></app-total>
+</div>

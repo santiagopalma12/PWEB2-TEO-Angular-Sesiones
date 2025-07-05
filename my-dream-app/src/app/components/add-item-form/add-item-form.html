@@ -1,1 +1,6 @@
-<p>add-item-form works!</p>
+<form (ngSubmit)="onSubmit()">
+  <input type="text" name="name" [(ngModel)]="name" placeholder="Nombre producto">
+  <input type="number" name="price" [(ngModel)]="price" placeholder="Precio">
+  <input type="number" name="quantity" [(ngModel)]="quantity" placeholder="Cantidad">
+  <button type="submit">Añadir Producto</button>
+</form>
